@@ -16,3 +16,5 @@ module Crypto
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
