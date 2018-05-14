@@ -1,0 +1,16 @@
+<h3> Crypto Curruncy Lookup</h3>
+<br><br>
+<%= form_tag home_lookup_path, :method => 'POST', :class => 'form-inline' do %>
+	<%= text_field_tag 'sym', nil, placeholder: 'Enter crypto symbol', size: 50, :class => 'form-control' %>
+	<%= submit_tag 'Lookup Qoute', :class => 'btn btn-primary' %>
+<% end %>
+
+<br><br>
+<% if @symbol %>
+	<% for coin in @lookup_coins['data'] %>
+		<% if @symbol == coin[1]['symbol'] %>
+			<%= coin[1]['name'] %> : <%= coin[1]['quotes']['USD']['price'] %><br>
+			Rank: <%= coin[1]['rank'] %>
+		<% end %>
+	<% end %>
+<% end %>
