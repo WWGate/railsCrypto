@@ -1,11 +1,17 @@
-<h3> Crypto Curruncy Lookup</h3>
-<br><br>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Crypto Curruncy Lookup</h3>
+  </div>
+  <div class="panel-body">
+
 <%= form_tag home_lookup_path, :method => 'POST', :class => 'form-inline' do %>
 	<%= text_field_tag 'sym', nil, placeholder: 'Enter crypto symbol', size: 50, :class => 'form-control' %>
 	<%= submit_tag 'Lookup Qoute', :class => 'btn btn-primary' %>
 <% end %>
 
-<br><br>
+</div>
+</div>
+
 <% if @symbol %>
 	<% for coin in @lookup_coins['data'] %>
 		<% if @symbol == coin[1]['symbol'] %>
